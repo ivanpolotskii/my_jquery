@@ -1,0 +1,15 @@
+.blue{
+    color: blue;
+}
+.move{
+    transition: 3s;
+    opacity: 0;
+}
+.bigfont{
+    font-size:50px;
+}
+.ban{
+    border: 5px solid #000;
+    padding: 30px;
+    height: 300px;
+}
