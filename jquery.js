@@ -170,23 +170,23 @@ class Jquery {
     }
 
     append(elem){
-        // Функция добавляет содержимое в конец элементов
-        this.selector.append(elem);
+        // Функция добавляет содержимое в конец элемента
+        this.selector.insertAdjacentHTML('beforeend',elem);
     }
 
     prepend(elem){
-        // Функция добавляет содержимое в конец элементов
-        this.selector.prepend(elem);
+        // Функция добавляет содержимое в начало элемента
+        this.selector.insertAdjacentHTML('afterbegin',elem);
     }
     
     before(elem){
         // Функция добавляет содержимое в конец элементов
-        this.selector.before(elem);
+        this.selector.insertAdjacentHTML('beforebegin',elem);
     }
 
     after(elem){
         // Функция добавляет содержимое в конец элементов
-        this.selector.after(elem);
+        this.selector.insertAdjacentHTML('afterend',elem);
     }
 
     ready(callback) {
@@ -228,6 +228,7 @@ class Jquery {
 
 }
 const $ = function (selector) {
+    
     if (typeof (selector) === 'string') {
         return new Jquery(document.querySelector(selector));
     } else {
