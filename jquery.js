@@ -124,17 +124,69 @@ class Jquery {
         return this.selector.clientWidth;
     }
 
-    offset(){
-
-    }
-
-    position(){
-        
-    }
-
     outerWidth(newWidth = '') {
         //  высота элемента с учетом внутренних отступов, рамки (border-width)
         return this.selector.offsetWidth;
+    }
+
+    offset(){
+        // TODO
+    }
+
+    position(){
+        // TODO
+    }
+
+    offsetParent(){
+        // TODO
+    }
+
+    scrollTop(){
+        // TODO
+    }
+    
+    scrollLeft(){
+        // TODO
+    }
+
+    // *Добавление содержимого
+
+    html(newHTML = "") {
+        // Возвращает или изменяет html-содержимое выбранных элементов страницы.
+        if (newHTML === "") {
+            return this.selector.innerHTML;
+        }
+        this.selector.innerHTML = newHTML;
+        return this;
+    }
+    
+    text(newText = "") {
+        // Возвращает или изменяет текстовое содержимое выбранных элементов страницы.
+        if (newText === "") {
+            return this.selector.textContent;
+        }
+        this.selector.textContent = newText;
+        return this;
+    }
+
+    append(elem){
+        // Функция добавляет содержимое в конец элементов
+        this.selector.append(elem);
+    }
+
+    prepend(elem){
+        // Функция добавляет содержимое в конец элементов
+        this.selector.prepend(elem);
+    }
+    
+    before(elem){
+        // Функция добавляет содержимое в конец элементов
+        this.selector.before(elem);
+    }
+
+    after(elem){
+        // Функция добавляет содержимое в конец элементов
+        this.selector.after(elem);
     }
 
     ready(callback) {
@@ -144,22 +196,6 @@ class Jquery {
 
     parent() {
         return this.selector.parentNode;
-    }
-
-    text(newText = "") {
-        if (newText === "") {
-            return this.selector.textContent;
-        }
-        this.selector.textContent = newText;
-        return this;
-    }
-
-    html(newHTML = "") {
-        if (newHTML === "") {
-            return this.selector.innerHTML;
-        }
-        this.selector.innerHTML = newHTML;
-        return this;
     }
 
     hide(ms) {
